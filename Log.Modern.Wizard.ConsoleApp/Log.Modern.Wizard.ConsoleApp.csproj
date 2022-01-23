@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="CommandDotNet" Version="6.1.0-alpha.repl" />
+    <PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
+    <PackageReference Include="Unity" Version="5.11.10" />
+    <PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+   <Reference Include="Core">
+      <HintPath>..\..\Core\Core\bin\Release\net6.0\Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Lib">
+      <HintPath>..\..\Core\Core.Lib\bin\Release\net6.0\Core.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="CLI.Core">
+      <HintPath>..\..\Console\CLI.Core\bin\Release\net6.0\CLI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CLI.Core.Lib">
+      <HintPath>..\..\Console\CLI.Core.Lib\bin\Release\net6.0\CLI.Core.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Console.Modern.Lib">
+      <HintPath>..\..\Console\Console.Modern.Lib\bin\Release\net6.0\Console.Modern.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="DataToTable">
+      <HintPath>..\..\DataToTable\DataToTable\bin\Release\net6.0\DataToTable.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandDotNet.IoC.Unity">
+      <HintPath>..\..\Console\CommandDotNet.IoC.Unity\bin\Release\net6.0\CommandDotNet.IoC.Unity.dll</HintPath>
+    </Reference>
+	<Reference Include="Log.Data">
+		<HintPath>..\..\Log.Data\Log.Data\bin\Release\net6.0\Log.Data.dll</HintPath>
+	</Reference>
+	<Reference Include="Log.Modern.Lib">
+		<HintPath>..\..\Log.Modern.Lib\Log.Modern.Lib\bin\Release\net6.0\Log.Modern.Lib.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+    
+</Project>
