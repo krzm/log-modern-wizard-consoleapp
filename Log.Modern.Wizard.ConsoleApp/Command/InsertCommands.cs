@@ -1,4 +1,4 @@
-using CLI.Core.Lib;
+using CLIWizardHelper;
 using CommandDotNet;
 using Log.Data;
 

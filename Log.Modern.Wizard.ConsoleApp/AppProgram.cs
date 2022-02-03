@@ -4,7 +4,8 @@ using Unity;
 
 namespace Log.Modern.Wizard.ConsoleApp;
 
-public class AppProgram : Console.Modern.Lib.AppProgramUnity<AppProgram>
+public class AppProgram 
+    : CommandDotNet.Helper.AppProgramUnity<AppProgram>
 {
 	private static bool inSession;
 

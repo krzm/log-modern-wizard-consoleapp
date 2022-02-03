@@ -13,38 +13,58 @@
     <PackageReference Include="CommandDotNet.DataAnnotations" Version="2.0.3" />
     <PackageReference Include="Unity" Version="5.11.10" />
     <PackageReference Include="CommandDotNet.NameCasing" Version="3.0.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-   <Reference Include="Core">
-      <HintPath>..\..\Core\Core\bin\Release\net6.0\Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Core.Lib">
-      <HintPath>..\..\Core\Core.Lib\bin\Release\net6.0\Core.Lib.dll</HintPath>
-    </Reference>
-    <Reference Include="CLI.Core">
-      <HintPath>..\..\Console\CLI.Core\bin\Release\net6.0\CLI.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CLI.Core.Lib">
-      <HintPath>..\..\Console\CLI.Core.Lib\bin\Release\net6.0\CLI.Core.Lib.dll</HintPath>
-    </Reference>
-    <Reference Include="Console.Modern.Lib">
-      <HintPath>..\..\Console\Console.Modern.Lib\bin\Release\net6.0\Console.Modern.Lib.dll</HintPath>
-    </Reference>
-    <Reference Include="DataToTable">
-      <HintPath>..\..\DataToTable\DataToTable\bin\Release\net6.0\DataToTable.dll</HintPath>
-    </Reference>
-    <Reference Include="CommandDotNet.IoC.Unity">
-      <HintPath>..\..\Console\CommandDotNet.IoC.Unity\bin\Release\net6.0\CommandDotNet.IoC.Unity.dll</HintPath>
-    </Reference>
-	<Reference Include="Log.Data">
-		<HintPath>..\..\Log.Data\Log.Data\bin\Release\net6.0\Log.Data.dll</HintPath>
-	</Reference>
-	<Reference Include="Log.Modern.Lib">
-		<HintPath>..\..\Log.Modern.Lib\Log.Modern.Lib\bin\Release\net6.0\Log.Modern.Lib.dll</HintPath>
-	</Reference>
+    	<Reference Include="Log.Data">
+			<HintPath>..\..\build\Build\log-data\Log.Data\Log.Data.dll</HintPath>
+		</Reference>
+		<Reference Include="Log.Modern.Lib">
+			<HintPath>..\..\build\Build\log-modern-lib\Log.Modern.Lib\Log.Modern.Lib.dll</HintPath>
+		</Reference>
+		<Reference Include="CLIHelper">
+			<HintPath>..\..\build\Build\cli-helper\CLIHelper\CLIHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="CLIReader">
+			<HintPath>..\..\build\Build\cli-reader\CLIReader\CLIReader.dll</HintPath>
+		</Reference>
+		<Reference Include="CRUDCommandHelper">
+			<HintPath>..\..\build\Build\crud-command-helper\CRUDCommandHelper\CRUDCommandHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="DotNetExtension">
+			<HintPath>..\..\build\Build\dotnet-extension\DotNetExtension\DotNetExtension.dll</HintPath>
+		</Reference>
+		<Reference Include="ModelHelper">
+			<HintPath>..\..\build\Build\model-helper\ModelHelper\ModelHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="EFCoreHelper">
+			<HintPath>..\..\build\Build\efcore-helper\EFCoreHelper\EFCoreHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="DataToTable">
+			<HintPath>..\..\build\Build\datatotable\DataToTable\DataToTable.dll</HintPath>
+		</Reference>
+		<Reference Include="DIHelper">
+			<HintPath>..\..\build\Build\di-helper\DIHelper\DIHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="EFCoreHelper">
+			<HintPath>..\..\build\Build\efcore-helper\EFCoreHelper\EFCoreHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="CommandDotNetHelper">
+			<HintPath>..\..\build\Build\commanddotnet-helper\CommandDotNet.Helper\CommandDotNet.Helper.dll</HintPath>
+		</Reference>
+    	<Reference Include="CLIWizardHelper">
+		  <HintPath>..\..\build\Build\cli-wizard-helper\CLIWizardHelper\CLIWizardHelper.dll</HintPath>
+	  	</Reference>
+    	<Reference Include="Log.Wizard.Lib">
+		  <HintPath>..\..\build\Build\log-wizard-lib\Log.Wizard.Lib\Log.Wizard.Lib.dll</HintPath>
+	  	</Reference>
+		<Reference Include="Log.Modern.Lib">
+		  <HintPath>..\..\build\Build\log-modern-lib\Log.Modern.Lib\Log.Modern.Lib.dll</HintPath>
+	  	</Reference>
+		<Reference Include="CRUDCommandHelper">
+		  <HintPath>..\..\build\Build\crud-command-helper\CRUDCommandHelper\CRUDCommandHelper.dll</HintPath>
+	  	</Reference>
   </ItemGroup>
-    
 </Project>

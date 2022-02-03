@@ -1,24 +1,25 @@
-using CLI.Core;
+using DIHelper;
 using Unity;
 
 namespace Log.Modern.Wizard.ConsoleApp;
 
-public class UnityDependencyCollection : CLI.Core.Lib.UnityDependencyCollection
+public class UnityDependencySuite 
+    : DIHelper.Unity.UnityDependencySuite
 {
-    public UnityDependencyCollection(
+    public UnityDependencySuite(
         IUnityContainer container) 
         : base(container) 
     {
     }
 
     protected override void RegisterDatabase()=> 
-        RegisterDependencyProvider<AppDatabase>();
+        RegisterSet<AppDatabase>();
 
     protected override void RegisterConsoleOutput() => 
-        RegisterDependencyProvider<AppOutput>();
+        RegisterSet<AppOutput>();
 
     protected override void RegisterCommands() => 
-        RegisterDependencyProvider<AppCommands>();
+        RegisterSet<AppCommands>();
 
     protected override void RegisterProgram() => 
         Container.RegisterSingleton<IAppProgram, AppProgram>();

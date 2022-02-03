@@ -1,14 +1,15 @@
-using CLI.Core;
-using CLI.Core.Lib;
-using Core.Lib;
+using CLIHelper;
+using CLIReader;
+using CLIWizardHelper;
 using Log.Data;
-using Log.Modern.Lib;
+using Log.Wizard.Lib;
 using Unity;
 using Unity.Injection;
 
 namespace Log.Modern.Wizard.ConsoleApp;
 
-public class AppCommands : UnityDependencyProvider
+public class AppCommands 
+    : DIHelper.Unity.UnityDependencySet
 {
     public AppCommands(
         IUnityContainer container) 
@@ -16,7 +17,7 @@ public class AppCommands : UnityDependencyProvider
     {
     }
 
-    public override void RegisterDependencies()
+    public override void Register()
     {
         RegisterInsertCommands();
         RegisterUpdateCommands();
