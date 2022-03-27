@@ -3,8 +3,10 @@ using CLIReader;
 using CLIWizardHelper;
 using Log.Data;
 using Log.Wizard.Lib;
+using Serilog;
 using Unity;
 using Unity.Injection;
+using Task = Log.Data.Task;
 
 namespace Log.Modern.Wizard.ConsoleApp;
 
@@ -25,33 +27,33 @@ public class AppCommands
 
     private void RegisterInsertCommands()
     {
-        Container.RegisterSingleton<IInsertWizard<Data.Place>, PlaceInsertWizard>(
+        Container.RegisterSingleton<IInsertWizard<Place>, PlaceInsertWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
             ));
 
-        Container.RegisterSingleton<IInsertWizard<Data.Category>, CategoryInsertWizard>(
+        Container.RegisterSingleton<IInsertWizard<Category>, CategoryInsertWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
             ));
 
-        Container.RegisterSingleton<IInsertWizard<Data.Task>, TaskInsertWizard>(
+        Container.RegisterSingleton<IInsertWizard<Task>, TaskInsertWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
             ));
 
-        Container.RegisterSingleton<IInsertWizard<Data.LogModel>, LogInsertWizard>(
+        Container.RegisterSingleton<IInsertWizard<LogModel>, LogInsertWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
                 , Container.Resolve<IReader<string>>(nameof(OptionalTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
                 , Container.Resolve<IReader<DateTime>>(nameof(RequiredDateTimeReader))
                 , Container.Resolve<IReader<DateTime?>>(nameof(OptionalDateTimeReader))
             ));
@@ -59,32 +61,32 @@ public class AppCommands
 
     private void RegisterUpdateCommands()
     {
-        Container.RegisterSingleton<IUpdateWizard<Data.Place>, PlaceUpdateWizard>(
+        Container.RegisterSingleton<IUpdateWizard<Place>, PlaceUpdateWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
             ));
 
-        Container.RegisterSingleton<IUpdateWizard<Data.Category>, CategoryUpdateWizard>(
+        Container.RegisterSingleton<IUpdateWizard<Category>, CategoryUpdateWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
             ));
 
-         Container.RegisterSingleton<IUpdateWizard<Data.Task>, TaskUpdateWizard>(
+         Container.RegisterSingleton<IUpdateWizard<Task>, TaskUpdateWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
             ));
 
-         Container.RegisterSingleton<IUpdateWizard<Data.LogModel>, LogUpdateWizard>(
+         Container.RegisterSingleton<IUpdateWizard<LogModel>, LogUpdateWizard>(
             new InjectionConstructor(
                 Container.Resolve<ILogUnitOfWork>()
                 , Container.Resolve<IReader<string>>(nameof(RequiredTextReader))
-                , Container.Resolve<IOutput>()
+                , Container.Resolve<ILogger>()
                 , Container.Resolve<IReader<string>>(nameof(OptionalTextReader))
                 , Container.Resolve<IReader<DateTime>>(nameof(RequiredDateTimeReader))
                 , Container.Resolve<IReader<DateTime?>>(nameof(OptionalDateTimeReader))

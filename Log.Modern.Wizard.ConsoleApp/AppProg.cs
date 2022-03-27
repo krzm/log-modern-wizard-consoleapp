@@ -1,11 +1,13 @@
 using CommandDotNet;
 using CommandDotNet.Repl;
-using Unity;
+using CommandDotNet.Unity.Helper;
+using Config.Wrapper;
+using Serilog;
 
 namespace Log.Modern.Wizard.ConsoleApp;
 
-public class AppProgram 
-    : CommandDotNet.Helper.AppProgramUnity<AppProgram>
+public class AppProg 
+    : AppProgUnity<AppProg>
 {
 	private static bool inSession;
 
@@ -15,9 +17,10 @@ public class AppProgram
     [Subcommand]
     public UpdateCommands? WizardUpdateCommands { get; set; }
 
-    public AppProgram(
-        IUnityContainer container) 
-            : base(container)
+    public AppProg(
+        ILogger log
+        , IConfigReader config) 
+            : base(log, config)
     {
     }
 
@@ -36,20 +39,6 @@ public class AppProgram
         {
             context.Console.WriteLine($"no session {inSession}");
             context.ShowHelpOnExit = true;
-        }
-    }
-
-    protected override void RegisterCommandClasses(AppRunner appRunner)
-    {
-        var commandClassTypes = appRunner.GetCommandClassTypes();
-        var registeredExplicitly = new Type[] 
-        {
-            // typeof()
-        };
-        foreach (var type in commandClassTypes)
-        {
-            if(registeredExplicitly.Contains(type.type)) continue;
-            Container.RegisterSingleton(type.type);
         }
     }
 }
