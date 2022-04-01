@@ -1,10 +1,9 @@
-using System.ComponentModel.Design.Serialization;
 using CLIHelper.Unity;
 using CLIReader;
 using CommandDotNet.Unity.Helper;
-using Config.Wrapper;
-using Log.Table;
-using Serilog.Wrapper;
+using Config.Wrapper.Unity;
+using Log.Table.Unity;
+using Serilog.Wrapper.Unity;
 using Unity;
 
 namespace Log.Modern.Wizard.ConsoleApp;
