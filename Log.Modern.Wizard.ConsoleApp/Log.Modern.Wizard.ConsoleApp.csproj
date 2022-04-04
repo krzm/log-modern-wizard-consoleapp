@@ -24,6 +24,12 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+  	</ItemGroup>
+
 	<!-- Debug refs -->
 	<!-- <ItemGroup>
 		<Reference Include="EFCoreHelper">
