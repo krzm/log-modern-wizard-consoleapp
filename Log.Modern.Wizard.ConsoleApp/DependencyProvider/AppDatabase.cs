@@ -1,4 +1,4 @@
-using EFCoreHelper;
+using EFCore.Helper;
 using Log.Data;
 using Unity;
 
@@ -17,9 +17,9 @@ public class AppDatabase
     {
         Container.RegisterSingleton<LogContext>();
 
-        Container.RegisterSingleton<IGenericRepository<Data.Category>, EFGenericRepository<Data.Category, LogContext>>();
-        Container.RegisterSingleton<IGenericRepository<Data.Place>, EFGenericRepository<Data.Place, LogContext>>();
-        Container.RegisterSingleton<IGenericRepository<Data.Task>, EFGenericRepository<Data.Task, LogContext>>();
+        Container.RegisterSingleton<IRepository<Data.Category>, EFRepository<Data.Category, LogContext>>();
+        Container.RegisterSingleton<IRepository<Data.Place>, EFRepository<Data.Place, LogContext>>();
+        Container.RegisterSingleton<IRepository<Data.Task>, EFRepository<Data.Task, LogContext>>();
         Container.RegisterSingleton<ILogRepo, LogRepo>();
 
         Container.RegisterSingleton<ILogUnitOfWork, LogUnitOfWork>();

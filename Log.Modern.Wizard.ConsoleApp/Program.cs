@@ -7,4 +7,5 @@ IBootstraper booter = new Bootstraper(
 		new UnityContainer()
 			.AddExtension(
 				new Diagnostic())));
-booter.Boot(args);
+booter.CreateApp();
+booter.RunApp(args);
